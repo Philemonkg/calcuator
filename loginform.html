@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <p>Welcome to the Login Form</p>
+
+    <form>
+        <label for="username">Username:</label><input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><input type="password" id="password" name="password" required><br>
+        <p id="message"></p>
+        <br/>
+        <button type="button" id="loginButton">Login</button>
+        <a href="index.html"></a>
+    </form>
+
+    <script>
+
+        function verifyUser() {
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+            var loginButton = document.getElementById("loginButton").value
+
+        }
+
+        function checkUserCreds(username, password) {
+            var systemUsername = "philemon";
+            var systemPassword = "kganyago";
+
+            if (username == systemUsername && password == systemPassword) {
+                document.getElementById("message").innerHTML = "Correct. logging in...";
+            } else {
+                document.getElementById("message").innerHTML = "Invalid username or password.";
+            }
+            then 
+        }
+
+        document.getElementById("username").addEventListener("input", function() {
+            var username = this.value;
+            if (username.length > 0) {
+                document.getElementById("message").innerHTML = "Username entered.";
+            } else {
+                document.getElementById("message").innerHTML = "";
+            }
+        });
+        document.getElementById("password").addEventListener("input", function() {
+            var password = this.value;
+            if (password.length > 0) {
+                document.getElementById("message").innerHTML = "Password entered.";
+            } else {
+                document.getElementById("message").innerHTML = "";
+            }
+        });
+        document.getElementById("loginButton").addEventListener("click", function() {
+            verifyUser();
+        });
+
+        document.getElementById("loginButton").addEventListener("click", function() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            checkUserCreds(username, password);
+        });
+
+    </script>
+</body>
+</html>
